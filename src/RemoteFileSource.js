@@ -648,7 +648,7 @@ export default class RemoteFileSource {
         let parentFolderButton = document.createElement("button");
         parentFolderButton.className = "remoteFileAccess_folderCommandButton";
         let parentFolderImage = document.createElement("img");
-        parentFolderImage.src = uiutil.getResourcePath(fileAccessConstants.PARENT_FOLDER_IMAGE);
+        parentFolderImage.src = uiutil.getResourcePath(fileAccessConstants.PARENT_FOLDER_IMAGE,"combined-file-access");
         parentFolderButton.appendChild(parentFolderImage);
         parentFolderButton.title = "Go To Parent Folder";
         parentFolderButton.onclick = () => this._onParentFolderSelect();
@@ -657,7 +657,7 @@ export default class RemoteFileSource {
             let addFolderButton = document.createElement("button");
             addFolderButton.className = "remoteFileAccess_folderCommandButton";
             let addFolderImage = document.createElement("img");
-            addFolderImage.src = uiutil.getResourcePath(fileAccessConstants.ADD_FOLDER_IMAGE);
+            addFolderImage.src = uiutil.getResourcePath(fileAccessConstants.ADD_FOLDER_IMAGE,"combined-file-access");
             addFolderButton.appendChild(addFolderImage);
             addFolderButton.title = "Add New Folder";
             addFolderButton.onclick = () => this._onCreateFolder();
@@ -882,7 +882,7 @@ export default class RemoteFileSource {
         if(resourceName === undefined) {
             resourceName = fileAccessConstants.DEFAULT_MIME_ICON;
         }
-        return uiutil.getResourcePath(resourceName);
+        return uiutil.getResourcePath(resourceName,"combined-file-access");
     }
 
 }
