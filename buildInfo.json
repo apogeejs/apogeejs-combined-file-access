@@ -1,0 +1,13 @@
+{
+    "repoName": "apogeejs-combined-file-access",
+
+    "makeEsModule": true,
+    "esModuleFileName": "CombinedFileAccessAppConfigManager.js",
+    "esFilesToCopyUrls": [
+        "/apogeejs-combined-file-access/versionInfo.json"
+    ],
+    "esExternalLibs": [],
+    "esExternalLibRemapping": {},
+
+    "makeNpmModule": false
+}
