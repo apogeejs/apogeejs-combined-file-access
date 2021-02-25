@@ -1,13 +1,39 @@
 {
     "repoName": "apogeejs-combined-file-access",
 
-    "makeEsModule": true,
-    "esModuleFileName": "CombinedFileAccessAppConfigManager.js",
-    "esFilesToCopyUrls": [
-        "/apogeejs-combined-file-access/versionInfo.json"
-    ],
-    "esExternalLibs": [],
-    "esExternalLibRemapping": {},
-
-    "makeNpmModule": false
+    "esModule": {
+        "taskList": [
+            {
+                "type": "copyFileList",
+                "srcFileUrlList": [
+                    "/apogeejs-combined-file-access/versionInfo.json"
+                ]
+            },
+            {
+                "type": "copyFileList",
+                "srcFileUrlList": [
+                    "/apogeejs-combined-file-access/resources/**/*"
+                ],
+                "childFolder": "resources"
+            },
+            {
+                "type": "copyFileList",
+                "srcFileUrlList": [
+                    "/apogeejs-combined-file-access/style/**/*"
+                ],
+                "childFolder": "style"
+            },
+            {
+                "type": "copyFileList",
+                "srcFileUrlList": [
+                    "/apogeejs-combined-file-access/web/**/*"
+                ],
+                "childFolder": "web"
+            },
+            {
+                "type": "packageLib",
+                "esModuleFileName": "CombinedFileAccessAppConfigManager.js"
+            }
+        ]
+    }
 }
