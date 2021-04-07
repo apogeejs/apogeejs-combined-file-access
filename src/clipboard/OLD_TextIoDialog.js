@@ -1,4 +1,4 @@
-import ace from "/apogeejs-releases/releases/ext/ace/v1.4.3/ace.es.js";
+import ace from "/apogeejs-releases/releases/ext/ace/v1.4.12/ace.es.js";
 import {uiutil, dialogMgr}  from "/apogeejs-ui-lib/src/apogeeUiLib.js";
 
 /** This method shows a dialog that inputs or outputs a text area.
