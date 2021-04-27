@@ -665,7 +665,8 @@ function _lookupUserAccount() {
 			_loginInfo_.accountName = accountName;
 			_notifyLoginStateListeners();
 		}
-	}).catch(errorMsg => {
+	}).catch(error => {
+		let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
 		console.log("Error loading user info: " + errorMsg);
 	})
 }

@@ -73,8 +73,9 @@ export default class RemoteFileSource {
         saveFilePromise.then( fileMetadata => {
             //success
             if(this.onComplete) this.onComplete(null,true,fileMetadata); 
-        }).catch(errorMsg => {
+        }).catch(error => {
             //error
+            let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
             if(this.onComplete) this.onComplete(errorMsg,false,null);
         }) ;
     }
@@ -85,8 +86,9 @@ export default class RemoteFileSource {
         saveFilePromise.then( fileMetadata => {
             //success
             if(this.onComplete) this.onComplete(null,true,fileMetadata); 
-        }).catch(errorMsg => {
+        }).catch(error => {
             //error
+            let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
             if(this.onComplete) this.onComplete(errorMsg,false,null);
         }) ;
     }
@@ -97,8 +99,9 @@ export default class RemoteFileSource {
         openFilePromise.then( result => {
             //success
             if(this.onComplete) this.onComplete(null,result.data,result.fileMetadata); 
-        }).catch(errorMsg => {
+        }).catch(error => {
             //error
+            let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
             if(this.onComplete) this.onComplete(errorMsg,false,null);
         }) ;
     }
@@ -226,7 +229,8 @@ export default class RemoteFileSource {
             deletePromise.then( response => {
                 //reload folder
                 this._loadFolder(this.selectedDriveId,this.folderInfo.folder.fileId,true);
-            }).catch(errorMsg => {
+            }).catch(error => {
+                let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
                 apogeeUserAlert("There was an error deleting the " + objectType + ": " + errorMsg);
             })
         }
@@ -257,7 +261,8 @@ export default class RemoteFileSource {
                 renameFilePromise.then( response => {
                     //reload folder
                     this._loadFolder(this.selectedDriveId,this.folderInfo.folder.fileId,true);
-                }).catch(errorMsg => {
+                }).catch(error => {
+                    let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
                     apogeeUserAlert("There was an error renaming the file: " + errorMsg);
                 })
                 //close dialog
@@ -285,7 +290,8 @@ export default class RemoteFileSource {
                 createFolderPromise.then( response => {
                     //reload folder
                     this._loadFolder(this.selectedDriveId,this.folderInfo.folder.fileId,true);
-                }).catch(errorMsg => {
+                }).catch(error => {
+                    let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
                     apogeeUserAlert("There was an error creating the folder: " + errorMsg);
                 })
                 //close dialog
@@ -468,7 +474,8 @@ export default class RemoteFileSource {
         let filesInfoPromise = this.remoteFileSystem.loadFolder(driveId,folderId,forceReload);
         filesInfoPromise.then(folderInfo => {
             this._setFilesInfo(folderInfo);
-        }).catch(errorMsg => {
+        }).catch(error => {
+            let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
             apogeeUserAlert("Error opening folder: " + errorMsg);
             this._setFilesInfo(null);
             //if we failed to find the folder, try to open the root of the given drive
@@ -539,8 +546,9 @@ export default class RemoteFileSource {
         let drivesInfoPromise = this.remoteFileSystem.getDrivesInfo();
         drivesInfoPromise.then(drivesInfo => {
             this._setDrivesInfo(drivesInfo);
-        }).catch(errorMsg => {
+        }).catch(error => {
             //figure out what to do here
+            let errorMsg = error.message ? error.message : error ? error.toString() : "Unknown";
             apogeeUserAlert("Error loading drive info: " + errorMsg)
         })
     }
