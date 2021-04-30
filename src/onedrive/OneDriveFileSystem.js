@@ -679,7 +679,7 @@ function _getUserInfoPromise() {
 	let token = _getToken();
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Accept": "application/json;odata.metadata=none"
 		}
@@ -693,7 +693,7 @@ function _getUserDrivesPromise() {
 	let token = _getToken();
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Accept": "application/json;odata.metadata=none"
 		}
@@ -710,7 +710,7 @@ function _getFolderInfoPromise(driveId,fileId) {
 	let token = _getToken();
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Accept": "application/json;odata.metadata=none"
 		}
@@ -735,7 +735,7 @@ function _createFileRequest(driveId,parentFileId,fileName,data) {
 	let token = _getToken();
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Accept": "application/json;odata.metadata=none",
 			"Content-Type": "application/json"
@@ -753,7 +753,7 @@ function _updateFileRequest(driveId,fileId,data) {
 	let token = _getToken();
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Accept": "application/json;odata.metadata=none",
 			"Content-Type": "application/json"
@@ -777,7 +777,7 @@ function _renameFileRequest(driveId,fileId,fileName) {
 	//"@microsoft.graph.conflictBehavior": "fail"
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Content-Type": "application/json"
 		},
@@ -799,7 +799,7 @@ function _createFolderRequest(driveId,parentFileId,fileName) {
 	}
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Content-Type": "application/json"
 		},
@@ -816,7 +816,7 @@ function _deleteFileRequest(driveId,fileId) {
 	let token = _getToken();
 
 	let options = {
-		header: { 
+		headers: { 
 			"Authorization": "Bearer " + token,
 			"Accept": "application/json;odata.metadata=none"
 		},
