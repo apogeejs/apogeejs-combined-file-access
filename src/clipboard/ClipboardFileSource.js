@@ -2,7 +2,7 @@ import * as fileAccessConstants from "/apogeejs-combined-file-access/src/fileAcc
 
 ///////////////////////////
 const {uiutil} = apogeeui;
-const {ace} = apogeeview;
+const {ace} = apogeeapp;
 ///////////////////////////
 
 let ClipboardFileSourceGenerator = {
