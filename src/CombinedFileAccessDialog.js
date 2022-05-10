@@ -39,14 +39,22 @@ export default class CombinedAccessDialog {
         this._createLayout();
         this._populateLayout();
 
-        this.dialog = dialogMgr.createDialog();
-        this.dialog.setContent(this.mainContainer);
-        dialogMgr.showDialog(this.dialog);
+        // this.dialog = dialogMgr.createDialog();
+        // this.dialog.setContent(this.mainContainer);
+        // dialogMgr.showDialog(this.dialog);
+
+        this.dialog = document.createElement("dialog")
+        document.body.appendChild(this.dialog);
+        this.dialog.appendChild(this.mainContainer)
+        this.dialog.showModal()
     }
 
     closeDialog() {
         //close dialog
-        dialogMgr.closeDialog(this.dialog);
+        // dialogMgr.closeDialog(this.dialog);
+        this.dialog.close();
+        document.body.removeChild(this.dialog);
+
         //clean up all sources
         this.sourceList.forEach(source => source.close());
 
