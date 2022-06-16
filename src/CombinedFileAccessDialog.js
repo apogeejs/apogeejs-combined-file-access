@@ -53,7 +53,7 @@ export default class CombinedAccessDialog {
         //close dialog
         // dialogMgr.closeDialog(this.dialog);
         this.dialog.close();
-        document.body.removeChild(this.dialog);
+        //document.body.removeChild(this.dialog);
 
         //clean up all sources
         this.sourceList.forEach(source => source.close());
